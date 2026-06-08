@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Certifications — CloudCerts</title>
+  <meta name="description" content="Browse and filter every Azure, AWS, and Google Cloud certification by provider, level, and domain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html"><span class="logo-mark"><i class="fa-solid fa-cloud"></i></span> CloudCerts</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="pathway.html">Pathway</a>
+        <a href="about.html">About</a>
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main id="explore-app">
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Explore Certifications</h2>
+          <p>Filter and search across every certification in the catalog.</p>
+        </div>
+
+        <div class="filter-bar glass">
+          <div class="filter-group">
+            <label for="filter-provider">Provider</label>
+            <select id="filter-provider">
+              <option value="all">All Providers</option>
+              <option value="azure">Microsoft Azure</option>
+              <option value="aws">AWS</option>
+              <option value="gcp">Google Cloud</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-level">Level</label>
+            <select id="filter-level">
+              <option value="all">All Levels</option>
+              <option value="foundational">Foundational</option>
+              <option value="associate">Associate</option>
+              <option value="professional">Professional</option>
+              <option value="expert">Expert</option>
+              <option value="specialty">Specialty</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-domain">Domain</label>
+            <select id="filter-domain">
+              <option value="all">All Domains</option>
+              <option value="developer">Developer</option>
+              <option value="devops">DevOps / SRE</option>
+              <option value="data">Data / AI / ML</option>
+              <option value="security">Security</option>
+              <option value="architect">Architecture</option>
+              <option value="admin">IT Admin</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="business">Business / Management</option>
+            </select>
+          </div>
+          <div class="filter-group grow">
+            <label for="filter-search">Search</label>
+            <input id="filter-search" type="search" placeholder="Search by name or code (e.g. AZ-104)" />
+          </div>
+        </div>
+
+        <p class="results-count" id="explore-count"></p>
+        <div class="cert-grid" id="explore-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>CloudCerts</strong> — your cloud certification compass.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pathway.html">Pathway</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/pathway.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

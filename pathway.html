@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Pathway — CloudCerts</title>
+  <meta name="description" content="Build a personalized, interactive cloud certification pathway and track your progress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html"><span class="logo-mark"><i class="fa-solid fa-cloud"></i></span> CloudCerts</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="pathway.html">Pathway</a>
+        <a href="about.html">About</a>
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main id="pathway-app">
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Build Your Pathway</h2>
+          <p>Choose your provider and background to generate an interactive certification roadmap. Click any cert to see details and track progress.</p>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="step">
+          <div class="step-title"><span class="step-num">1</span> Choose a provider</div>
+          <div class="choice-grid">
+            <button class="choice selected" data-pw-provider="all"><i class="fa-solid fa-layer-group"></i> All Providers</button>
+            <button class="choice" data-pw-provider="azure"><i class="fa-brands fa-microsoft"></i> Azure</button>
+            <button class="choice" data-pw-provider="aws"><i class="fa-brands fa-aws"></i> AWS</button>
+            <button class="choice" data-pw-provider="gcp"><i class="fa-brands fa-google"></i> Google Cloud</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step">
+          <div class="step-title"><span class="step-num">2</span> Your background</div>
+          <div class="selector-block">
+            <label>Experience level</label>
+            <div class="choice-grid">
+              <button class="choice" data-pw-exp="student"><i class="fa-solid fa-graduation-cap"></i> Student / No Experience</button>
+              <button class="choice" data-pw-exp="junior"><i class="fa-solid fa-seedling"></i> 1-2 Years IT</button>
+              <button class="choice" data-pw-exp="mid"><i class="fa-solid fa-chart-line"></i> 3-5 Years IT</button>
+              <button class="choice" data-pw-exp="senior"><i class="fa-solid fa-user-tie"></i> 5+ Years IT</button>
+              <button class="choice" data-pw-exp="cloud-pro"><i class="fa-solid fa-cloud"></i> Cloud Professional</button>
+            </div>
+          </div>
+          <div class="selector-block">
+            <label>Focus area</label>
+            <div class="choice-grid">
+              <button class="choice" data-pw-domain="developer"><i class="fa-solid fa-code"></i> Developer</button>
+              <button class="choice" data-pw-domain="devops"><i class="fa-solid fa-infinity"></i> DevOps / SRE</button>
+              <button class="choice" data-pw-domain="data"><i class="fa-solid fa-database"></i> Data / ML</button>
+              <button class="choice" data-pw-domain="security"><i class="fa-solid fa-shield-halved"></i> Security</button>
+              <button class="choice" data-pw-domain="architect"><i class="fa-solid fa-sitemap"></i> Architecture</button>
+              <button class="choice" data-pw-domain="admin"><i class="fa-solid fa-server"></i> IT Admin</button>
+              <button class="choice" data-pw-domain="business"><i class="fa-solid fa-briefcase"></i> Business / Management</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step">
+          <div class="step-title"><span class="step-num">3</span> Your interactive pathway</div>
+          <div id="pw-results"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIDE PANEL -->
+    <aside class="pw-panel" id="pw-panel" aria-label="Certification details">
+      <button class="icon-btn pw-panel-close" id="pw-panel-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="pw-panel-body"></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>CloudCerts</strong> — your cloud certification compass.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pathway.js"></script>
+</body>
+</html>

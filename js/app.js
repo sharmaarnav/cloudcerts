@@ -50,9 +50,26 @@ function domainTags(cert) {
 function providerIcon(p) {
   return `<i class="fa-brands ${PROVIDERS[p].icon}"></i>`;
 }
+function statusBanner(cert) {
+  if (cert.status === "retired") {
+    const rep = cert.replacedBy ? ` → Replaced by ${cert.replacedBy}` : "";
+    return `<div class="status-banner retired"><i class="fa-solid fa-ban"></i> Retired ${cert.retiredDate}${rep}</div>`;
+  }
+  if (cert.status === "retiring") {
+    const rep = cert.replacedBy ? ` → ${cert.replacedBy}` : "";
+    return `<div class="status-banner retiring"><i class="fa-solid fa-triangle-exclamation"></i> Retiring ${cert.retirementDate}${rep}</div>`;
+  }
+  if (cert.status === "new") {
+    return `<div class="status-banner new-cert"><i class="fa-solid fa-star"></i> New Certification</div>`;
+  }
+  return "";
+}
+
 function certCard(cert) {
+  const isRetired = cert.status === "retired";
   return `
-    <a class="cert-card glass ${cert.provider}" href="certification.html?id=${cert.id}">
+    <a class="cert-card glass ${cert.provider}${isRetired ? " is-retired" : ""}" href="certification.html?id=${cert.id}">
+      ${statusBanner(cert)}
       <div class="cert-card-badge ${cert.provider}">
         ${providerIcon(cert.provider)}
         <span class="cert-card-code">${cert.code}</span>
@@ -181,7 +198,7 @@ function renderHomeRecommendation() {
 }
 
 /* ============================ EXPLORE PAGE ============================ */
-const exploreState = { provider: "all", level: "all", domain: "all", search: "" };
+const exploreState = { provider: "all", level: "all", domain: "all", status: "all", search: "" };
 
 function initExplore() {
   if (!document.getElementById("explore-app")) return;
@@ -200,6 +217,7 @@ function initExplore() {
   bind("filter-provider", "provider");
   bind("filter-level", "level");
   bind("filter-domain", "domain");
+  bind("filter-status", "status");
 
   const search = document.getElementById("filter-search");
   if (search) search.addEventListener("input", () => { exploreState.search = search.value.toLowerCase().trim(); renderExplore(); });
@@ -215,14 +233,23 @@ function renderExplore() {
     if (exploreState.provider !== "all" && c.provider !== exploreState.provider) return false;
     if (exploreState.level !== "all" && c.level !== exploreState.level) return false;
     if (exploreState.domain !== "all" && !c.domain.includes(exploreState.domain)) return false;
+    if (exploreState.status === "active" && (c.status === "retired" || c.status === "retiring")) return false;
+    if (exploreState.status === "retired" && c.status !== "retired") return false;
+    if (exploreState.status === "retiring" && c.status !== "retiring") return false;
+    if (exploreState.status === "new" && c.status !== "new") return false;
     if (exploreState.search) {
       const hay = (c.name + " " + c.code + " " + c.description).toLowerCase();
       if (!hay.includes(exploreState.search)) return false;
     }
     return true;
   });
-  // Sort by provider then level order
-  results.sort((a, b) => a.provider.localeCompare(b.provider) || LEVELS[a.level].order - LEVELS[b.level].order);
+  // Sort: active first, then retiring, then retired; within each group by provider then level
+  const statusOrder = { active: 0, new: 0, retiring: 1, retired: 2 };
+  results.sort((a, b) => {
+    const sa = statusOrder[a.status] ?? 0, sb = statusOrder[b.status] ?? 0;
+    if (sa !== sb) return sa - sb;
+    return a.provider.localeCompare(b.provider) || LEVELS[a.level].order - LEVELS[b.level].order;
+  });
   if (count) count.textContent = `${results.length} certification${results.length !== 1 ? "s" : ""} found`;
   grid.innerHTML = results.length
     ? results.map(certCard).join("")

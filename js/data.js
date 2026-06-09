@@ -41,6 +41,7 @@ const CERTS = [
   },
   {
     id: "AI-900", code: "AI-900", name: "Microsoft Azure AI Fundamentals",
+    status: "retiring", retirementDate: "June 30, 2026", replacedBy: "AI-901",
     provider: "azure", level: "foundational", domain: ["data", "business"],
     description: "Covers fundamental concepts of artificial intelligence and machine learning, and how Azure services implement them. Includes computer vision, NLP, and generative AI basics. A great entry point for AI on Azure.",
     whoIsItFor: "Beginners exploring AI and machine learning concepts, both technical and non-technical.",
@@ -127,6 +128,7 @@ const CERTS = [
   },
   {
     id: "MB-910", code: "MB-910", name: "Microsoft Dynamics 365 Fundamentals (CRM)",
+    status: "retired", retiredDate: "December 31, 2025", replacedBy: null,
     provider: "azure", level: "foundational", domain: ["business"],
     description: "Covers the customer engagement capabilities of Dynamics 365 including Sales, Customer Service, Field Service, and Marketing. Introduces shared features across the CRM apps. A foundation for Dynamics 365 CRM roles.",
     whoIsItFor: "People starting with Dynamics 365 customer engagement applications.",
@@ -149,6 +151,7 @@ const CERTS = [
   },
   {
     id: "MB-920", code: "MB-920", name: "Microsoft Dynamics 365 Fundamentals (ERP)",
+    status: "retired", retiredDate: "December 31, 2025", replacedBy: null,
     provider: "azure", level: "foundational", domain: ["business"],
     description: "Covers the finance and operations capabilities of Dynamics 365 including Finance, Supply Chain Management, and Commerce. Introduces shared ERP features. A foundation for Dynamics 365 ERP roles.",
     whoIsItFor: "People starting with Dynamics 365 finance and operations applications.",
@@ -170,6 +173,7 @@ const CERTS = [
   },
   {
     id: "MS-900", code: "MS-900", name: "Microsoft 365 Fundamentals",
+    status: "retiring", retirementDate: "March 31, 2026", replacedBy: null,
     provider: "azure", level: "foundational", domain: ["admin", "business"],
     description: "Validates foundational knowledge of Microsoft 365 cloud services and productivity solutions. Covers collaboration, security, compliance, and pricing. An entry point to Microsoft 365 administration.",
     whoIsItFor: "Those seeking to understand Microsoft 365 cloud offerings and adoption.",
@@ -216,6 +220,7 @@ const CERTS = [
   },
   {
     id: "AZ-204", code: "AZ-204", name: "Developing Solutions for Microsoft Azure",
+    status: "retiring", retirementDate: "July 31, 2026", replacedBy: "AI-200 (Azure AI Cloud Developer Associate)",
     provider: "azure", level: "associate", domain: ["developer"],
     description: "Validates skills in designing, building, testing, and maintaining cloud applications on Azure. Covers compute, storage, security, monitoring, and connecting to Azure services. The key credential for Azure developers.",
     whoIsItFor: "Developers building cloud-native applications on Azure.",
@@ -261,6 +266,7 @@ const CERTS = [
   },
   {
     id: "AZ-500", code: "AZ-500", name: "Microsoft Azure Security Technologies",
+    status: "retiring", retirementDate: "August 31, 2026", replacedBy: "SC-500 (Cloud and AI Security Engineer Associate)",
     provider: "azure", level: "associate", domain: ["security"],
     description: "Validates skills in implementing security controls, managing identity and access, and protecting data, applications, and networks. Covers Microsoft Entra, security operations, and platform protection. A core Azure security credential.",
     whoIsItFor: "Security engineers implementing protections on Azure.",
@@ -303,6 +309,7 @@ const CERTS = [
   },
   {
     id: "AI-102", code: "AI-102", name: "Designing and Implementing a Microsoft Azure AI Solution",
+    status: "retiring", retirementDate: "June 30, 2026", replacedBy: "AI-103 (Azure AI App and Agent Developer Associate)",
     provider: "azure", level: "associate", domain: ["data", "developer"],
     description: "Validates skills in building, managing, and deploying AI solutions using Azure AI services. Covers computer vision, NLP, knowledge mining, and generative AI. The associate-level Azure AI engineer credential.",
     whoIsItFor: "AI engineers and developers building AI solutions on Azure.",
@@ -325,6 +332,7 @@ const CERTS = [
   },
   {
     id: "DP-100", code: "DP-100", name: "Designing and Implementing a Data Science Solution on Azure",
+    status: "retiring", retirementDate: "June 1, 2026", replacedBy: "AI-300 (Machine Learning Operations Engineer Associate)",
     provider: "azure", level: "associate", domain: ["data"],
     description: "Validates skills in applying data science and machine learning to implement and run workloads on Azure. Covers Azure Machine Learning, model training, deployment, and MLOps. The associate Azure data scientist credential.",
     whoIsItFor: "Data scientists operating ML workloads on Azure.",
@@ -451,6 +459,7 @@ const CERTS = [
   },
   {
     id: "SC-400", code: "SC-400", name: "Microsoft Information Protection and Compliance Administrator",
+    status: "retired", retiredDate: "May 31, 2025", replacedBy: "SC-401 (Microsoft Information Security Administrator)",
     provider: "azure", level: "associate", domain: ["security"],
     description: "Validates skills in planning and implementing information protection, data loss prevention, and compliance. Covers Microsoft Purview capabilities. A specialized compliance credential.",
     whoIsItFor: "Compliance and information protection administrators.",
@@ -491,6 +500,7 @@ const CERTS = [
   },
   {
     id: "PL-200", code: "PL-200", name: "Microsoft Power Platform Functional Consultant",
+    status: "retiring", retirementDate: "August 31, 2026", replacedBy: "AB-410 (Intelligent Applications Builder Associate)",
     provider: "azure", level: "associate", domain: ["business"],
     description: "Validates skills in configuring Microsoft Dataverse, building apps, creating flows, and implementing chatbots. Covers functional consulting for Power Platform. A consultant-focused credential.",
     whoIsItFor: "Functional consultants implementing Power Platform solutions.",
@@ -534,6 +544,7 @@ const CERTS = [
   },
   {
     id: "PL-600", code: "PL-600", name: "Microsoft Power Platform Solution Architect",
+    status: "retiring", retirementDate: "June 30, 2026", replacedBy: "AB-100 (Agentic AI Business Solutions Architect Expert)",
     provider: "azure", level: "expert", domain: ["architect", "business"],
     description: "Validates skills in leading successful Power Platform implementations as a solution architect. Covers requirements, architecture, and implementation oversight. The expert-level Power Platform credential.",
     whoIsItFor: "Solution architects leading Power Platform engagements.",
@@ -657,6 +668,7 @@ const CERTS = [
   },
   {
     id: "AZ-800", code: "AZ-800", name: "Administering Windows Server Hybrid Core Infrastructure",
+    status: "retiring", retirementDate: "September 30, 2026", replacedBy: "AZ-802 (consolidated single exam)",
     provider: "azure", level: "associate", domain: ["infrastructure", "admin"],
     description: "Validates skills in administering Windows Server core workloads in on-premises and hybrid environments. Covers identity, storage, compute, and networking. Part of the Windows Server Hybrid Administrator path.",
     whoIsItFor: "Administrators managing Windows Server in hybrid setups.",
@@ -678,6 +690,7 @@ const CERTS = [
   },
   {
     id: "AZ-801", code: "AZ-801", name: "Configuring Windows Server Hybrid Advanced Services",
+    status: "retiring", retirementDate: "September 30, 2026", replacedBy: "AZ-802 (consolidated single exam)",
     provider: "azure", level: "expert", domain: ["infrastructure", "admin"],
     description: "Validates skills in configuring advanced Windows Server services in hybrid environments. Covers security, high availability, disaster recovery, and migration. Completes the Windows Server Hybrid Administrator path.",
     whoIsItFor: "Administrators implementing advanced hybrid Windows Server services.",
@@ -874,6 +887,7 @@ const CERTS = [
   },
   {
     id: "SOA-C02", code: "SOA-C02", name: "AWS Certified SysOps Administrator – Associate",
+    status: "retired", retiredDate: "September 29, 2025", replacedBy: "SOA-C03 (AWS Certified CloudOps Engineer – Associate)",
     provider: "aws", level: "associate", domain: ["admin", "devops"],
     description: "Validates skills in deploying, managing, and operating workloads on AWS. Covers monitoring, reliability, deployment, security, networking, and automation. The AWS operations credential.",
     whoIsItFor: "Systems administrators and operations engineers on AWS.",
@@ -1052,6 +1066,7 @@ const CERTS = [
   },
   {
     id: "DBS-C01", code: "DBS-C01", name: "AWS Certified Database – Specialty",
+    status: "retired", retiredDate: "April 29, 2024", replacedBy: null,
     provider: "aws", level: "specialty", domain: ["data"],
     description: "Validates expertise in recommending, designing, and maintaining AWS database solutions. Covers workload-specific design, deployment, migration, and operations. The AWS database specialty.",
     whoIsItFor: "Database professionals working with AWS database services.",
@@ -1074,6 +1089,7 @@ const CERTS = [
   },
   {
     id: "DAS-C01", code: "DAS-C01", name: "AWS Certified Data Analytics – Specialty",
+    status: "retired", retiredDate: "April 8, 2024", replacedBy: "DEA-C01 (AWS Certified Data Engineer – Associate)",
     provider: "aws", level: "specialty", domain: ["data"],
     description: "Validates expertise in designing, building, securing, and maintaining analytics solutions on AWS. Covers collection, storage, processing, analysis, and visualization. The AWS data analytics specialty.",
     whoIsItFor: "Data analytics professionals building AWS analytics solutions.",
@@ -1096,6 +1112,7 @@ const CERTS = [
   },
   {
     id: "PAS-C01", code: "PAS-C01", name: "AWS Certified SAP on AWS – Specialty",
+    status: "retired", retiredDate: "April 29, 2024", replacedBy: null,
     provider: "aws", level: "specialty", domain: ["infrastructure", "architect"],
     description: "Validates expertise in designing, implementing, migrating, and operating SAP workloads on AWS. Covers SAP architecture, migration, and operations. A specialized enterprise workload credential.",
     whoIsItFor: "Architects and engineers running SAP workloads on AWS.",
@@ -1360,6 +1377,55 @@ const CERTS = [
     prevCerts: ["GCP-CDL"],
     studyResources: [
       { title: "Google Cloud Skills Boost - Workspace Admin", type: "Free Course", url: "#" }
+    ]
+  },
+
+  // ===================== NEW / REPLACEMENT CERTS =====================
+  {
+    id: "SOA-C03", code: "SOA-C03", name: "AWS Certified CloudOps Engineer – Associate",
+    status: "active",
+    provider: "aws", level: "associate", domain: ["admin", "devops"],
+    description: "The successor to the retired SysOps Administrator (SOA-C02), launched September 30, 2025. Validates skills in deploying, managing, and operating cloud workloads on AWS with emphasis on containers, multi-account architectures, and infrastructure as code. Reflects modern cloud operations practices.",
+    whoIsItFor: "Cloud operations engineers, SREs, and system administrators managing AWS environments.",
+    whyGetIt: "The current AWS operations associate credential — replaced SOA-C02. Essential for operations-focused AWS roles and a stepping stone to DevOps Engineer Professional.",
+    skills: [
+      { name: "Monitoring, logging, and remediation", percentage: 20 },
+      { name: "Reliability and business continuity", percentage: 16 },
+      { name: "Deployment, provisioning, and automation", percentage: 18 },
+      { name: "Security and compliance", percentage: 16 },
+      { name: "Networking and content delivery", percentage: 18 },
+      { name: "Cost and performance optimization", percentage: 12 }
+    ],
+    prerequisites: { experience: "1+ year operating AWS workloads; familiarity with containers and IaC.", certs: ["CLF-C02"] },
+    examDetails: { questions: 65, duration: "130 minutes", passingScore: "720/1000", cost: "$150 USD", format: "Multiple choice, multiple response", languages: ["English", "Japanese", "Korean", "Simplified Chinese"], validity: "3 years", renewal: "Recertification exam or higher-level exam" },
+    careerRoles: ["Cloud Operations Engineer", "Site Reliability Engineer", "DevOps Engineer", "Platform Engineer"],
+    nextCerts: ["DOP-C02"],
+    prevCerts: ["CLF-C02"],
+    studyResources: [
+      { title: "AWS Skill Builder SOA-C03 Exam Prep", type: "Free Course", url: "#" },
+      { title: "AWS Official Practice Question Set", type: "Practice Test", url: "#" }
+    ]
+  },
+  {
+    id: "SC-401", code: "SC-401", name: "Microsoft Information Security Administrator",
+    status: "active",
+    provider: "azure", level: "associate", domain: ["security"],
+    description: "The successor to the retired SC-400, launched mid-2025. Validates skills in implementing Microsoft Purview information protection, data lifecycle management, and data loss prevention. Focuses solely on information security administration, removing the broader compliance scope of SC-400.",
+    whoIsItFor: "Information security administrators and data protection officers working with Microsoft Purview.",
+    whyGetIt: "The current Microsoft information protection credential — replaced SC-400. Critical for compliance and data security roles in Microsoft 365 environments.",
+    skills: [
+      { name: "Implement information protection", percentage: 40 },
+      { name: "Implement data loss prevention", percentage: 35 },
+      { name: "Implement data lifecycle and records management", percentage: 25 }
+    ],
+    prerequisites: { experience: "Familiarity with Microsoft 365 compliance and Purview solutions.", certs: ["SC-900"] },
+    examDetails: { questions: 50, duration: "120 minutes", passingScore: "700/1000", cost: "$165 USD", format: "Multiple choice, case studies", languages: ["English", "Japanese", "Chinese", "Korean"], validity: "1 year (renewable)", renewal: "Annual renewal assessment on Microsoft Learn (free)" },
+    careerRoles: ["Information Security Administrator", "Data Protection Officer", "Compliance Administrator", "Information Governance Specialist"],
+    nextCerts: ["SC-100"],
+    prevCerts: ["SC-900"],
+    studyResources: [
+      { title: "Microsoft Learn SC-401 Path", type: "Free Course", url: "#" },
+      { title: "SC-401 Practice Assessment", type: "Practice Test", url: "#" }
     ]
   }
 ];

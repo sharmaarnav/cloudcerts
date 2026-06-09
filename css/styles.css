@@ -203,6 +203,35 @@ section { padding: 70px 0; }
 .badge-professional { background: var(--c-professional); }
 .badge-expert { background: linear-gradient(120deg, var(--c-expert), #ff7a45); color:#1a1505; }
 .badge-specialty { background: var(--c-specialty); }
+.badge-retired { background: #6b7280; }
+.badge-retiring { background: linear-gradient(120deg, #f59e0b, #d97706); color: #1a0f00; }
+.badge-new { background: linear-gradient(120deg, #10b981, #059669); }
+
+/* Full-width status alert on cert detail page */
+.cert-status-alert {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 22px; border-radius: var(--radius-sm);
+  margin-bottom: 24px; font-size: .93rem; line-height: 1.6;
+}
+.cert-status-alert i { font-size: 1.3rem; margin-top: 2px; flex-shrink: 0; }
+.cert-status-alert.retired  { background: rgba(107,114,128,.18); border: 1px solid rgba(107,114,128,.35); color: #d1d5db; }
+.cert-status-alert.retiring { background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.3);  color: #fde68a; }
+.cert-status-alert.new-cert { background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.3);  color: #6ee7b7; }
+
+/* Status banners on cards */
+.status-banner {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  font-size: .78rem; font-weight: 700; letter-spacing: .3px;
+}
+.status-banner.retired  { background: rgba(107,114,128,.25); color: #d1d5db; border-bottom: 1px solid rgba(107,114,128,.3); }
+.status-banner.retiring { background: rgba(245,158,11,.15); color: #fcd34d; border-bottom: 1px solid rgba(245,158,11,.25); }
+.status-banner.new-cert { background: rgba(16,185,129,.15); color: #6ee7b7; border-bottom: 1px solid rgba(16,185,129,.25); }
+
+/* Dim retired cards slightly */
+.cert-card.is-retired { opacity: .7; }
+.cert-card.is-retired:hover { opacity: 1; }
+
 .tag {
   display: inline-block; padding: 3px 10px; border-radius: 8px; font-size: .75rem; font-weight: 600;
   background: var(--surface-strong); border: 1px solid var(--border); color: var(--text-dim);

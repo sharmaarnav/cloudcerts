@@ -29,12 +29,35 @@ function initCertPage() {
       <i class="fa-solid fa-arrow-right"></i></a>` : "";
   };
 
+  // Build prominent status alert for retired/retiring certs
+  let statusAlert = "";
+  if (cert.status === "retired") {
+    const rep = cert.replacedBy ? `<br><strong>Replaced by:</strong> ${cert.replacedBy}` : "<br>No direct replacement announced.";
+    statusAlert = `<div class="cert-status-alert retired">
+      <i class="fa-solid fa-ban"></i>
+      <div><strong>This certification was retired on ${cert.retiredDate}.</strong> The exam is no longer available. Existing credentials remain valid for 3 years from the date earned.${rep}</div>
+    </div>`;
+  } else if (cert.status === "retiring") {
+    const rep = cert.replacedBy ? `<br><strong>Replacement:</strong> ${cert.replacedBy}` : "";
+    statusAlert = `<div class="cert-status-alert retiring">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div><strong>⚠️ This certification is retiring on ${cert.retirementDate}.</strong> You can still earn it before that date. Plan accordingly.${rep}</div>
+    </div>`;
+  } else if (cert.status === "new") {
+    statusAlert = `<div class="cert-status-alert new-cert">
+      <i class="fa-solid fa-star"></i>
+      <div><strong>New certification!</strong> This credential was recently launched.</div>
+    </div>`;
+  }
+
   root.innerHTML = `
     <nav class="breadcrumb">
       <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i>
       <a href="explore.html">Explore</a> <i class="fa-solid fa-chevron-right"></i>
       <span>${cert.code}</span>
     </nav>
+
+    ${statusAlert}
 
     <header class="cert-header glass ${cert.provider}" style="--p-color:${pInfo.color}">
       <div class="cert-header-icon"><i class="fa-brands ${pInfo.icon}"></i></div>
